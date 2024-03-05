@@ -1,8 +1,9 @@
 // @ts-nocheck
 import { useState, useRef } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const AudioRecorder = () => {
-  const mimeType = "audio/webm";
+  const mimeType = "audio/mp3";
   const [permission, setPermission] = useState(false);
   const mediaRecorder = useRef(null);
   const [recordingStatus, setRecordingStatus] = useState("inactive");
@@ -13,22 +14,26 @@ const AudioRecorder = () => {
   const getMicrophonePermission = async () => {
     if ("MediaRecorder" in window) {
       try {
+        toast.loading("Getting Permission");
         const streamData = await navigator.mediaDevices.getUserMedia({
           audio: true,
           video: false,
         });
+        toast.dismiss();
+        toast.success("Permission Obtained");
         setPermission(true);
         setStream(streamData);
       } catch (err) {
-        alert(err.message);
+        toast.error("Permission Failed");
       }
     } else {
-      alert("The MediaRecorder API is not supported in your browser.");
+      toast.error("The MediaRecorder API is not supported in your browser.");
     }
   };
 
   const startRecording = async () => {
     setRecordingStatus("recording");
+    toast.loading("recording");
     //create new Media recorder instance using the stream
     const media = new MediaRecorder(stream, { type: mimeType });
     //set the MediaRecorder instance to the mediaRecorder ref
@@ -56,33 +61,52 @@ const AudioRecorder = () => {
       setAudio(audioUrl);
       setAudioChunks([]);
     };
+    toast.dismiss();
+    toast.success("recording successfull");
   };
 
   return (
-    <div>
-      <h2>Audio Recorder</h2>
-      <main>
-        <div className="audio-controls">
+    <div className="mt-1 flex flex-col gap-2">
+      <Toaster />
+      <main className="mt-1 flex flex-col gap-5">
+        <div className="flex flex-col">
           {!permission ? (
-            <button onClick={getMicrophonePermission} type="button">
+            <button
+              onClick={getMicrophonePermission}
+              type="button"
+              className="border-2 border-black p-1 pl-2 pr-2 rounded-md"
+            >
               Get Microphone
             </button>
           ) : null}
           {permission && recordingStatus === "inactive" ? (
-            <button onClick={startRecording} type="button">
+            <button
+              onClick={startRecording}
+              type="button"
+              className="border-2 border-black p-1 pl-2 pr-2 rounded-md"
+            >
               Start Recording
             </button>
           ) : null}
           {recordingStatus === "recording" ? (
-            <button onClick={stopRecording} type="button">
+            <button
+              onClick={stopRecording}
+              type="button"
+              className="border-2 border-black p-1 pl-2 pr-2 rounded-md"
+            >
               Stop Recording
             </button>
           ) : null}
         </div>
         {audio ? (
-          <div className="audio-container">
+          <div className="flex flex-col gap-5">
             <audio src={audio} controls></audio>
-            <a download href={audio}>
+            <a
+              download
+              href={audio}
+              className="border-2 border-black p-1 pl-2 pr-2 rounded-md"
+              onClick={() => toast.success("Recording Downloaded")}
+            >
               Download Recording
             </a>
           </div>
