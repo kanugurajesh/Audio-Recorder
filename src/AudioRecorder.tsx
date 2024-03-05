@@ -34,6 +34,7 @@ const AudioRecorder = () => {
   const startRecording = async () => {
     setRecordingStatus("recording");
     toast.loading("recording");
+    toast.success("recording has started start speaking")
     //create new Media recorder instance using the stream
     const media = new MediaRecorder(stream, { type: mimeType });
     //set the MediaRecorder instance to the mediaRecorder ref
@@ -62,19 +63,19 @@ const AudioRecorder = () => {
       setAudioChunks([]);
     };
     toast.dismiss();
-    toast.success("recording successfull");
+    toast.success("recording is successfull");
   };
 
   return (
-    <div className="mt-1 flex flex-col gap-2">
+    <div className="mt-1 flex flex-col gap-2 w-full">
       <Toaster />
-      <main className="mt-1 flex flex-col gap-5">
-        <div className="flex flex-col">
+      <main className="mt-1 flex flex-col gap-5 w-full">
+        <div className="flex flex-col w-full">
           {!permission ? (
             <button
               onClick={getMicrophonePermission}
               type="button"
-              className="border-2 border-black p-1 pl-2 pr-2 rounded-md"
+              className="border-2 border-black p-1 pl-2 pr-2 rounded-md font-medium transition-all ease-in-out duration-500 hover:bg-black hover:text-white"
             >
               Get Microphone
             </button>
@@ -83,7 +84,7 @@ const AudioRecorder = () => {
             <button
               onClick={startRecording}
               type="button"
-              className="border-2 border-black p-1 pl-2 pr-2 rounded-md"
+              className="border-2 border-black p-1 pl-2 pr-2 rounded-md font-medium transition-all ease-in-out duration-500 hover:bg-black hover:text-white"
             >
               Start Recording
             </button>
@@ -92,7 +93,7 @@ const AudioRecorder = () => {
             <button
               onClick={stopRecording}
               type="button"
-              className="border-2 border-black p-1 pl-2 pr-2 rounded-md"
+              className="border-2 border-black p-1 pl-2 pr-2 rounded-md font-medium transition-all ease-in-out duration-500 hover:bg-black hover:text-white"
             >
               Stop Recording
             </button>
@@ -104,7 +105,7 @@ const AudioRecorder = () => {
             <a
               download
               href={audio}
-              className="border-2 border-black p-1 pl-2 pr-2 rounded-md"
+              className="border-2 border-black p-1 pl-2 pr-2 rounded-md font-medium transition-all ease-in-out duration-500 hover:bg-black hover:text-white"
               onClick={() => toast.success("Recording Downloaded")}
             >
               Download Recording
