@@ -30,6 +30,9 @@ const App = () => {
 
     if (cursorElement.classList.contains("animated-click")) {
       cursorElement.classList.remove("animated-click");
+      setTimeout(() => {
+        cursorElement.classList.remove("animated-click");
+      }, 500);
     } else {
       cursorElement.classList.add("animated-click");
     }
