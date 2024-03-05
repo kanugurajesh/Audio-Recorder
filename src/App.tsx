@@ -60,6 +60,7 @@ const App = () => {
         }}
         ref={clickRef}
       ></div>
+      <img src="./microphone.png" alt="microphone" width={80} height={80}/>
       <h1 className="text-4xl font-bold">React Audio Recorder</h1>
       <div className="text-center">
         <AudioRecorder />
