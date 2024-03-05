@@ -27,6 +27,20 @@ npm install
 npm run dev
 ```
 
+## Screenshots
+
+![Screenshot 2024-03-05 235707](https://github.com/kanugurajesh/Audio-Recorder/assets/77529419/6fe3b3a7-6dc4-4f19-b5e1-35606cece24d)
+
+![Screenshot 2024-03-05 235713](https://github.com/kanugurajesh/Audio-Recorder/assets/77529419/1f5bc6e3-f0a4-4f08-a4db-23acf4e63736)
+
+![Screenshot 2024-03-05 235731](https://github.com/kanugurajesh/Audio-Recorder/assets/77529419/3565a0a0-90ee-462a-90ed-24e112c12d65)
+
+![Screenshot 2024-03-05 235737](https://github.com/kanugurajesh/Audio-Recorder/assets/77529419/a2c8bc5c-d1c3-4e47-b0ce-34d6f4dd3422)
+
+![Screenshot 2024-03-05 235747](https://github.com/kanugurajesh/Audio-Recorder/assets/77529419/10929506-c207-43a3-b67f-cc96d352db1f)
+
+![Screenshot 2024-03-05 235754](https://github.com/kanugurajesh/Audio-Recorder/assets/77529419/b0fd231a-9801-43a6-afde-2ab1082d5891)
+
 ## Contribution Guidelines
 
 We welcome contributions to enhance and improve the llm app. If you have ideas or improvements, feel free to submit a pull request following our contribution guidelines.
