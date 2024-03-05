@@ -1,9 +1,34 @@
+.animated-slide {
+    animation-name: cursorSlide;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
 .animated-click {
     animation-name: cursorClick;
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
 }
 
-@keyframes cursorClick {
+@keyframes cursorSlide {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
+@keyframes cursorClick {
+    0% {
+        border-width: 2px; /* Initial border width */
+    }
+    50% {
+        border-width: 10px; /* Expanded border width */
+    }
+    100% {
+        border-width: 2px; /* Back to initial border width */
+    }
 }
