@@ -6,7 +6,55 @@
 
 # Audio Recorder
 
-An application to record audio with the help of react and download it
+An application to record audio with the help of react and download it in mp3 format
+
+## Features
+
+- Audio Recording
+- Offline Compatible
+- Downloadable Audio
+
+## Project Setup
+
+```bash
+# fork the repo to your github
+git clone https://github.com/your-username/Audio-Recorder
+# change your directory to the Application directory
+cd Audio-Recorder
+# install the packages
+npm install
+# Run the application
+npm run dev
+```
+
+## Contribution Guidelines
+
+We welcome contributions to enhance and improve the llm app. If you have ideas or improvements, feel free to submit a pull request following our contribution guidelines.
+
+## Feedback and Issues
+
+If you encounter any issues or have feedback, please open an issue on our [GitHub repository](https://github.com/kanugurajesh/Student-LMS/issues). We appreciate your input and strive to make our system better with each update.
+
+## Tech Stack
+
+- React
+- Vite
+- TailwindCSS
+
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://rajeshportfolio.me/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rajesh-kanugu-aba8a3254/)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/exploringengin1)
+  
+## Authors
+
+- [@kanugurajesh](https://github.com/kanugurajesh)
+
+## Support
+
+For support, you can buy me a coffee
+
+<a href="https://www.buymeacoffee.com/kanugurajen" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
 # React + TypeScript + Vite
 
