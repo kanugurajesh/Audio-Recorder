@@ -1,3 +1,13 @@
+#### 🌟 star the repo if you like it
+
+<div align=center>
+  <img src="https://github.com/kanugurajesh/Audio-Recorder/assets/77529419/e23d4b9b-6af8-42b1-92e9-b747809f3897" width=100 height=100 />
+</div>
+
+# Audio Recorder
+
+An application to record audio with the help of react and download it
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
