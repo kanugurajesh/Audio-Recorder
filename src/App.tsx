@@ -27,15 +27,10 @@ const App = () => {
 
   const handleClick = () => {
     const cursorElement = clickRef.current;
-
-    if (cursorElement.classList.contains("animated-click")) {
+    cursorElement.classList.add("animated-click");
+    setTimeout(() => {
       cursorElement.classList.remove("animated-click");
-      setTimeout(() => {
-        cursorElement.classList.remove("animated-click");
-      }, 500);
-    } else {
-      cursorElement.classList.add("animated-click");
-    }
+    }, 500);
   };
 
   useEffect(() => {
@@ -55,6 +50,7 @@ const App = () => {
   return (
     <div
       className="flex flex-col justify-center items-center h-screen gap-5 relative"
+      style={{cursor:"none"}}
       ref={cursorRef}
     >
       <div
@@ -70,13 +66,13 @@ const App = () => {
       <div className="flex gap-4">
         <button
           onClick={toggleRecordOption("video")}
-          className="text-md border-2 border-black pl-2 pr-2 pt-1 pb-1 rounded-lg"
+          className="text-md border-2 border-black pl-2 pr-2 pt-1 pb-1 rounded-lg hover:bg-red-500 transition-all ease-in-out duration-500 font-medium"
         >
           Record Video
         </button>
         <button
           onClick={toggleRecordOption("audio")}
-          className="text-md border-2 border-black pl-2 pr-2 pt-1 pb-1 rounded-lg"
+          className="text-md border-2 border-black pl-2 pr-2 pt-1 pb-1 rounded-lg hover:bg-red-500 transition-all ease-in-out duration-500 font-medium"
         >
           Record Audio
         </button>
@@ -84,9 +80,6 @@ const App = () => {
       <div className="text-center">
         {recordOption === "video" ? <VideoRecorder /> : <AudioRecorder />}
       </div>
-      <p>
-        Cursor Position: {cursorPosition.x}, {cursorPosition.y}
-      </p>
     </div>
   );
 };
