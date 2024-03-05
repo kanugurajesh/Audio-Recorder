@@ -1,0 +1,9 @@
+.animated-click {
+    animation-name: cursorClick;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes cursorClick {
+
+}

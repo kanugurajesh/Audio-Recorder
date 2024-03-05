@@ -1,5 +1,6 @@
 // @ts-nocheck
 import { useState, useRef } from "react";
+
 const VideoRecorder = () => {
     const [permission, setPermission] = useState(false);
     const [stream, setStream] = useState(null);
@@ -41,4 +42,5 @@ const VideoRecorder = () => {
         </div>
     );
 };
+
 export default VideoRecorder;
